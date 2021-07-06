@@ -1,4 +1,38 @@
 package com.example.zzik_kong.fragment
 
-class MainFragment {
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import com.example.zzik_kong.R
+import com.example.zzik_kong.databinding.FragmentMainBinding
+
+class MainFragment : Fragment() {
+    private var mBinding : FragmentMainBinding? = null
+    private val binding get() = mBinding!!
+    lateinit var navController : NavController
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        val binding = FragmentMainBinding.inflate(inflater,container,false)
+        mBinding = binding
+        return mBinding?.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        navController = Navigation.findNavController(view)
+        binding.logoutBtn.setOnClickListener {
+            navController.navigate(R.id.action_mainFragment_to_loadFragment)
+        }
+    }
+    override fun onDestroyView() {
+        mBinding=null
+        super.onDestroyView()
+    }
 }
