@@ -4,13 +4,19 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import com.example.zzik_kong.databinding.ActivityMenuBinding
 
 class MenuActivity :AppCompatActivity() {
+    lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_second_fragment) as NavHostFragment
+        navController = navHostFragment.navController
     }
 
     override fun onPause() {
