@@ -40,6 +40,7 @@ class LoginFragment : Fragment(){
         binding.signBtn.setOnClickListener {
             navController.navigate(R.id.action_loginFragment_to_signFragment)
         }
+
     }
     override fun onDestroyView() {
         super.onDestroyView()

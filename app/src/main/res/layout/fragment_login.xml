@@ -8,7 +8,7 @@
     tools:context="com.example.zzik_kong.fragment.LoginFragment">
 
     <EditText
-        android:id="@+id/id"
+        android:id="@+id/edit_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -21,7 +21,7 @@
         tools:ignore="MissingConstraints"/>
 
     <EditText
-        android:id="@+id/pw"
+        android:id="@+id/edit_pw"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
